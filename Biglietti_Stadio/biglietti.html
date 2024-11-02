@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <form action="gestioneacquisto.php" method="GET">
+        Nome: <input type="text" name="nome"><br>
+        Cognome: <input type="text" name="cognome"><br>
+        Codice fiscale: <input type="text" name="cf"><br>
+        Settore biglietto <select name="settore" id="settore">
+            <option value="1">curva(30€)</option>
+            <option value="2">tribuna centrale(80€)</option>
+            <option value="3">tribuna d'onore(120€)</option>
+        </select><br>
+        Codice sconto: <input type="text" name="sconto"><br>
+        TIO DI BIGLIETTO: <br>
+        Biglietto unico<input type="radio" name="biglietto" value="1" onclick="vediDiv(false);" checked><br>
+        Più biglietti <input type="radio" name="biglietto" value="2" onclick="vediDiv(true);"><br>
+        
+        <div id="divPiuBiglietti" style="display:none;"><br>
+            Numero biglietti aggiuntivi: <input type="number" name="nBigliettiAgg" value="1" min="1" max="4" onchange="aggiungiCF();"><br>
+            <div id="cfAggiuntivo"></div>
+        </div>
+        <input type="submit">
+    </form>
+
+    <script src="./js/script.js"></script>    
+</body>
+</html>
